@@ -1,7 +1,8 @@
 module.exports = [
   {
     title: "Hiker",
-    link: "https://hiker.world",
+    link: "http://hiker.world/#/",
+    github: "https://github.com/mlaufersweiler/hiker1",
     techs:
       "React | Redux | Node | Express | Massive | PostgreSQL | Axios | Bcrypt | Node-Cron | Twilio | TwiML | Nodemailer | Moment.js | HTML5 | Styled Components | CSS3",
     info:
