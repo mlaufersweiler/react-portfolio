@@ -7,20 +7,52 @@ html {
   box-sizing: inherit;
 }
 
+.flip-image {
+  transform: scaleX(-1);
+  padding-right: 100px;
+}
+.flip-image div {
+  transform: scaleX(-1);
+}
+
 .main-body {
   width: 100%;
   height: 650px;
-  /* background: url("../../images/hero.JPG") no-repeat center center fixed; */
+  position: relative;
+  background: url("../../images/hero3.jpg") no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 75px;
   padding-left: 100px;
-  font-family: Helvetica, sans-serif;
 }
 
 .main-greeting {
   font-size: 100px;
-  color: black;
-  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.hero-copyright {
+  font-size: 10px;
+  color: #fff6;
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+}
+
+@media (max-width: 750px) {
+  .flip-image {
+    padding-right: 20px;
+  }
+  .main-body {
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    background-position: 55% center;
+  }
+
+  .main-greeting {
+    font-size: 48px;
+  }
 }

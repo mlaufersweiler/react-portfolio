@@ -6,7 +6,48 @@ class Header extends Component {
   constructor() {
     super();
 
-    this.state = {};
+    this.state = {
+      width: 0,
+      skills: 0,
+      projects: 0,
+      about: 0,
+      contact: 0,
+      contactTitle: ""
+    };
+  }
+
+  componentDidMount() {
+    this.setState(
+      {
+        width: window.innerWidth
+      },
+      () => {
+        this.setScrollValues();
+      }
+    );
+  }
+
+  setScrollValues() {
+    // Set scroll values for desktop
+    if (this.state.width > 800) {
+      this.setState({
+        skills: 600,
+        projects: 900,
+        contact: 2000,
+        contactTitle: "Contact Me"
+      });
+    }
+    // Set scroll values for mobile
+    else {
+      let toProjects = 1150;
+      this.setState({
+        skills: 570,
+        projects: toProjects,
+        about: toProjects + 460 * 5,
+        contact: 6000,
+        contactTitle: "Contact"
+      });
+    }
   }
 
   onNavClick(offset) {
@@ -36,18 +77,29 @@ class Header extends Component {
             <div className="header-link" onClick={() => this.onNavClick(0)}>
               Home
             </div>
-            <div className="header-link" onClick={() => this.onNavClick(600)}>
+            <div
+              className="header-link"
+              onClick={() => this.onNavClick(this.state.skills)}
+            >
               Skills
             </div>
-            <div className="header-link" onClick={() => this.onNavClick(992)}>
+            <div
+              className="header-link"
+              onClick={() => this.onNavClick(this.state.projects)}
+            >
               Projects
             </div>
-            {/* <div className='header-link' onClick={() => this.onNavClick( 1650 )} >About</div> */}
+            <div
+              className="header-link header-about"
+              onClick={() => this.onNavClick(this.state.about)}
+            >
+              About
+            </div>
             <div
               className="header-link header-contact"
-              onClick={() => this.onNavClick(2000)}
+              onClick={() => this.onNavClick(this.state.contact)}
             >
-              Contact Me
+              {this.state.contactTitle}
             </div>
           </nav>
         </section>

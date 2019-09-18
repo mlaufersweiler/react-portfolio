@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.about-body {
+  width: 50%;
+  height: 350px;
+  background: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-headshot {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: -100px;
+  margin-right: -100%;
+  z-index: 50;
+  box-shadow: 0px 12px 20px #00000099;
+}
+
+.about-headshot:before {
+  content: "";
+  position: absolute;
+  box-shadow: inset 1px 7px 12px 1px #fffd;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: -1;
+  background: url("../../images/pro-headshot3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); */
+}
+
+.about-header {
+  color: white;
+  font-size: 40px;
+  margin-top: -60px;
+  font-weight: 600px;
+}
+
+.about-info {
+  width: 500px;
+  color: white;
+  /* font-weight: 600; */
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@media (max-width: 750px) {
+  .about-body {
+    width: 100%;
+    height: 450px;
+  }
+
+  .about-headshot {
+    height: 0px;
+    width: 110px;
+    margin-top: -50px;
+    margin-right: 0;
+  }
+  .about-headshot:before {
+    height: 110px;
+    width: 110px;
+  }
+
+  .about-header {
+    margin-top: 100px;
+  }
+
+  .about-info {
+    width: 100%;
+    padding: 20px;
+    margin-top: 0;
+  }
+}

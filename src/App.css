@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300");
 
+:root {
+  --gradient-left: #263354;
+  --gradient-right: #b7bbae;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -9,17 +14,19 @@ html {
   box-sizing: inherit;
 }
 
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
 .app-body {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
 }
 
 .app-sidebyside {
   width: 100%;
-  height: 350px;
   display: flex;
 }
 
@@ -29,7 +36,25 @@ html {
   background: black;
   color: white;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-left: 20px;
+  padding-right: 20px;
   font-size: 14px;
+}
+
+@media (max-width: 750px) {
+  .app-body {
+    width: 100%;
+  }
+
+  .app-sidebyside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-footer {
+    font-size: 12px;
+  }
 }
