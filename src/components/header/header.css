@@ -83,12 +83,15 @@ html {
   }
 
   .header-left div {
-    color: #f8988c;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .header-link-title {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .header-right {
